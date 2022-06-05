@@ -1,0 +1,28 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    #009688 0%,
+    #009688 130px,
+    #d9dbd5 130px,
+    #d9dbd5 100%
+  );
+} */
+/* .login {
+  position: relative;
+  width: 1396px;
+  max-height: 100%;
+  height: calc(100vh - 40px);
+  background: #fff;
+} */
+.form {
+  margin: 10rem 10rem 10rem 10rem;
+}
