@@ -4,7 +4,10 @@ import { Button, Form, Container, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 // ===================================================================
 const Log = () => {
-  const [log, setLog] = useState("");
+  const [log, setLog] = useState({
+    email: "",
+    password: "",
+  });
 
   const handleSubmit = (e) => {
     e.pereventDefault();
@@ -34,7 +37,7 @@ const Log = () => {
                   type="email"
                   placeholder="Enter email"
                   value={log.email}
-                  onChange={(e) => setLog(e.target.value)}
+                  onChange={(e) => setLog({ email: e.target.value })}
                 />
               </Form.Group>
 
@@ -44,7 +47,7 @@ const Log = () => {
                   type="password"
                   placeholder="Password"
                   value={log.password}
-                  onChange={(e) => setLog(e.target.value)}
+                  onChange={(e) => setLog({ password: e.target.value })}
                 />
               </Form.Group>
 
