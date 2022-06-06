@@ -26,17 +26,16 @@ const Log = () => {
 
   // ===============================================
   return (
-    <div>
+    <div className="container">
       <Container className="login">
         <Row>
           <Col md={6} className=" my-5">
             <Form className="form" onSubmit={handleSubmit}>
-              <h4 style={{ color: "green" }} className="mb-3">
-                LogIn
-              </h4>
+              <h4 className="log-text">LogIn</h4>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
+                  className="form-input"
                   type="email"
                   placeholder="Enter email"
                   value={log.email}
@@ -47,6 +46,7 @@ const Log = () => {
               <Form.Group controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
                 <Form.Control
+                  className="form-input"
                   type="password"
                   placeholder="Password"
                   value={log.password}
@@ -54,11 +54,11 @@ const Log = () => {
                 />
               </Form.Group>
 
-              <Button className="mr-3" variant="primary" type="submit">
+              <Button className="login_button" variant="primary" type="submit">
                 Log In
               </Button>
               <Link to="/signup">
-                <Button variant="warning" type="submit">
+                <Button className="button-sign" variant="warning" type="submit">
                   Do'not have an account? Sign up
                 </Button>
               </Link>

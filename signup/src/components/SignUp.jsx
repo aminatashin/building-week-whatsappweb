@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
 // import axios from "axios";
+import "./signup.css";
 // ====================================================================
 const Signup = () => {
   const [sign, setSign] = useState({
@@ -42,17 +43,16 @@ const Signup = () => {
   };
   //   ===============================================================
   return (
-    <div>
+    <div className="container">
       <Container className="signup">
         <Row>
           <Col md={10}>
-            <Form className="form" onSubmit={handleSubmit}>
-              <h4 style={{ color: "blue" }} className="mb-3">
-                Sign Up
-              </h4>
+            <Form className="form-sign" onSubmit={handleSubmit}>
+              <p className="signup-text">Sign Up!</p>
               <Form.Group controlId="formBasicPassword">
                 <Form.Label>FirstName</Form.Label>
                 <Form.Control
+                  className="sign-input"
                   type="text"
                   placeholder="first name"
                   value={sign.firstname}
@@ -62,6 +62,7 @@ const Signup = () => {
               <Form.Group controlId="formBasicPassword">
                 <Form.Label>Username</Form.Label>
                 <Form.Control
+                  className="sign-input"
                   type="text"
                   placeholder="username"
                   value={sign.username}
@@ -71,6 +72,7 @@ const Signup = () => {
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
+                  className="sign-input"
                   type="email"
                   placeholder="Enter email"
                   value={sign.email}
@@ -81,6 +83,7 @@ const Signup = () => {
               <Form.Group controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
                 <Form.Control
+                  className="sign-input"
                   type="password"
                   placeholder="Password"
                   value={sign.password}
@@ -88,7 +91,7 @@ const Signup = () => {
                 />
               </Form.Group>
 
-              <Button variant="primary" type="submit">
+              <Button className="sign_button " variant="primary" type="submit">
                 Sign Up
               </Button>
             </Form>
