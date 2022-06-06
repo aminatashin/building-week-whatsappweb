@@ -43,10 +43,13 @@ const Signup = () => {
   //   ===============================================================
   return (
     <div>
-      <Container>
+      <Container className="signup">
         <Row>
-          <Col md={6}>
-            <Form onSubmit={handleSubmit}>
+          <Col md={10}>
+            <Form className="form" onSubmit={handleSubmit}>
+              <h4 style={{ color: "blue" }} className="mb-3">
+                Sign Up
+              </h4>
               <Form.Group controlId="formBasicPassword">
                 <Form.Label>FirstName</Form.Label>
                 <Form.Control

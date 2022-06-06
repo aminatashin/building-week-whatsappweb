@@ -1,0 +1,10 @@
+.signup {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+.form {
+  margin-left: 25rem;
+  margin-top: 15rem;
+  width: 100%;
+}

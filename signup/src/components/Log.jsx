@@ -31,6 +31,9 @@ const Log = () => {
         <Row>
           <Col md={6} className=" my-5">
             <Form className="form" onSubmit={handleSubmit}>
+              <h4 style={{ color: "green" }} className="mb-3">
+                LogIn
+              </h4>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control

@@ -16,13 +16,13 @@ body {
     #d9dbd5 100%
   );
 } */
-/* .login {
+.login {
   position: relative;
-  width: 1396px;
-  max-height: 100%;
-  height: calc(100vh - 40px);
-  background: #fff;
-} */
+  display: flex;
+  width: 100%;
+}
 .form {
-  margin: 10rem 10rem 10rem 10rem;
+  margin-left: 25rem;
+  margin-top: 15rem;
+  width: 100%;
 }
