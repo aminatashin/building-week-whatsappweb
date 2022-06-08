@@ -10,6 +10,7 @@ const port = process.env.PORT || 3004;
 // =================================================
 server.use(express.json());
 server.use(cors());
+
 server.use("/user", userRouter);
 // ==================================================
 mongoose.connect(process.env.MONGO_CONNECTION);

@@ -39,7 +39,7 @@ userRouter.post("/login", async (req, res, next) => {
     });
     res.send({ token });
     console.log(req.body);
-  }
+  } else res.status(400).send();
 });
 // ===================================
 export default userRouter;

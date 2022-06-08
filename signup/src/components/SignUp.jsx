@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 // import axios from "axios";
 import "./signup.css";
 
 // ====================================================================
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [sign, setSign] = useState({
     firstname: "",
     username: "",
@@ -39,6 +41,8 @@ const Signup = () => {
     });
     if (response.ok) {
       alert("signed Up succsessfully");
+      navigate("/");
+
       setSign("");
     } else {
       console.log("error");

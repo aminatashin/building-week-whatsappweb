@@ -20,9 +20,16 @@ const Log = () => {
     const res = await fetch("http://localhost:3004/user/login", {
       method: "POST",
       body: JSON.stringify(log),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
     if (res.ok) {
       alert("pass");
+      let data = await res.json();
+      localStorage.setItem("jwtToken", data.token);
+    } else {
+      alert("wrong username or password ");
     }
 
     setLog(initLog);
