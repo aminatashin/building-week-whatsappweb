@@ -54,7 +54,7 @@ const Signup = () => {
     <div className="container">
       <Container className="signup">
         <Row>
-          <Col md={10}>
+          <Col sm={10}>
             <Form className="form-sign" onSubmit={handleSubmit}>
               <p className="signup-text">Sign Up!</p>
               <Form.Group controlId="formBasicPassword">

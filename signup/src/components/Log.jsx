@@ -1,14 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./log.css";
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // ===================================================================
 const initLog = {
   email: "",
   password: "",
 };
 const Log = () => {
+  const navigate = useNavigate();
   const [log, setLog] = useState(initLog);
+
+  // useEffect =
+  //   (() => {
+  //     if (localStorage.getItem("jwtToken")) {
+  //       navigate("/chatpage");
+  //     }
+  //   },
+  //   []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,7 +49,7 @@ const Log = () => {
     <div className="container">
       <Container className="login">
         <Row>
-          <Col md={6} className=" my-5">
+          <Col sm={6} className=" my-5">
             <Form className="form" onSubmit={handleSubmit}>
               <h4 className="log-text">LogIn</h4>
               <Form.Group controlId="formBasicEmail">
