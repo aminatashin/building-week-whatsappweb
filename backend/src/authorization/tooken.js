@@ -9,6 +9,7 @@ export const tookenAuth = async (req, re, next) => {
     if (payload) {
       req.user = {
         _id: payload._id,
+        username: payload.username,
       };
       next();
     }

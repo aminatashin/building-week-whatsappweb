@@ -3,25 +3,29 @@ import "./log.css";
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 // ===================================================================
+const initLog = {
+  email: "",
+  password: "",
+};
 const Log = () => {
-  const [log, setLog] = useState({
-    email: "",
-    password: "",
-  });
+  const [log, setLog] = useState(initLog);
 
   const handleSubmit = (e) => {
-    e.pereventDefault();
+    e.preventDefault();
     fetchGet();
-    setLog("");
   };
   //   =============GET===========================
 
   const fetchGet = async () => {
-    const res = await fetch("http://localhost3004/user/login");
+    const res = await fetch("http://localhost:3004/user/login", {
+      method: "POST",
+      body: JSON.stringify(log),
+    });
     if (res.ok) {
-      const data = await res.json();
-      setLog(data);
+      alert("pass");
     }
+
+    setLog(initLog);
   };
 
   // ===============================================
@@ -39,7 +43,9 @@ const Log = () => {
                   type="email"
                   placeholder="Enter email"
                   value={log.email}
-                  onChange={(e) => setLog({ email: e.target.value })}
+                  onChange={(e) =>
+                    setLog((log) => ({ ...log, email: e.target.value }))
+                  }
                 />
               </Form.Group>
 
@@ -50,7 +56,9 @@ const Log = () => {
                   type="password"
                   placeholder="Password"
                   value={log.password}
-                  onChange={(e) => setLog({ password: e.target.value })}
+                  onChange={(e) =>
+                    setLog((log) => ({ ...log, password: e.target.value }))
+                  }
                 />
               </Form.Group>
 

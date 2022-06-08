@@ -9,8 +9,12 @@ userRouter.post("/signup", async (req, res, next) => {
   try {
     const user = new userModel(req.body);
     const { _id } = await user.save();
+
     res.send({ _id });
+    console.log(req.body);
   } catch (error) {
+    console.log(error);
+
     next(error);
   }
 });
@@ -29,8 +33,12 @@ userRouter.post("/login", async (req, res, next) => {
   const { email, password } = req.body;
   const user = await userModel.verifyUser(email, password);
   if (user) {
-    const token = await generateToken({ id: user._id });
+    const token = await generateToken({
+      _id: user._id,
+      username: user.username,
+    });
     res.send({ token });
+    console.log(req.body);
   }
 });
 // ===================================
