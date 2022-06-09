@@ -61,7 +61,7 @@ const ChatPage = () => {
           <div className="userimg">
             <img src={ALEX} className="cover" alt="img" />
           </div>
-          <div>{currentContact.username}$$</div>
+          <div>{currentContact.username}</div>
           <ul className="nav_icon">
             <li>
               <TbCircleDashed />

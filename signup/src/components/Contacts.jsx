@@ -42,8 +42,8 @@ const ContactUsers = ({ currentContact, chatChange }) => {
         </div>
         <div className="details">
           <div className="listHead">
-            <h2>{currentUserName}</h2>
-            <p className="time">10:10</p>
+            <h4>{currentUserName}</h4>
+            {/* <p className="time">10:10</p> */}
           </div>
           <div className="message_p">
             <p>personal message</p>
@@ -53,24 +53,23 @@ const ContactUsers = ({ currentContact, chatChange }) => {
       </div>
       <div className="block">
         {allUsers.map((contact, index) => (
-          <>
-            <div className="imgbx">
+          <div className="each-block">
+            <div className="imgbx2">
               <img src={ALEX} className="cover" alt="img" />
             </div>
             <div
-              className={`details ${index === select ? "selected" : ""}`}
+              className={`details2 ${index === select ? "selected" : ""}`}
               onClick={() => changeCurrentChat(index, contact)}
             >
-              <h4>{contact.username}</h4>
-              <div className="listHead">
-                <p className="time">10:10</p>
+              <div className="listHead2">
+                <h4>{contact.username}</h4>
               </div>
               <div className="message_p">
                 <p>personal message</p>
                 <b>1</b>
               </div>
             </div>
-          </>
+          </div>
         ))}
       </div>
     </div>
