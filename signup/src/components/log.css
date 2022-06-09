@@ -44,14 +44,14 @@ body {
 }
 .login_button {
   margin-left: 11rem;
-  padding: 1rem 4rem 1rem 4rem;
+  padding: 1rem 1rem 1rem 1rem;
   font-weight: 500;
   margin-top: 10px;
 }
 .button-sign {
-  margin-top: 20px;
+  margin-top: 30px;
   font-weight: 500;
   justify-content: center;
   align-items: center;
-  margin-left: 8rem;
+  margin-left: 5rem;
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import axios from "axios";
 import "./signup.css";
 
@@ -110,6 +110,11 @@ const Signup = () => {
               <Button className="sign_button " variant="primary" type="submit">
                 Sign Up
               </Button>
+              <Link to="/">
+                <Button className="log_button " variant="success" type="submit">
+                  Have an account? LOG IN !
+                </Button>
+              </Link>
             </Form>
           </Col>
         </Row>

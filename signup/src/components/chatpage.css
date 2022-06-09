@@ -1,16 +1,19 @@
 .container {
   position: relative;
+
   width: 3000px;
   max-height: 100%;
   height: calc(100vh - 40px);
   background: #fff;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.06);
   display: flex;
+
   margin: 0;
   padding: 0;
 }
 .container .leftside {
   position: relative;
+
   flex: 30%;
   background: #fff;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
@@ -21,6 +24,7 @@
   background: #e5ddd5;
 }
 .container .rightside::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -97,21 +101,22 @@
 }
 .chatlist {
   position: relative;
+
   height: calc(100% - 110px);
   overflow-y: auto;
 }
 .chatlist .block {
   position: relative;
+
+  flex-direction: column;
   width: 100%;
-
   display: flex;
-
-  align-items: center;
+  align-items: flex-start;
   padding: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   cursor: pointer;
 }
-.chatlist .block.active {
+.chatlist .selected {
   background: #ededed;
 }
 .chatlist .block:hover {

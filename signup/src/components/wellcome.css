@@ -1,0 +1,11 @@
+.wellcome {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: calc(100% - 120px);
+  padding: 50px;
+  overflow-y: auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

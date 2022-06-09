@@ -10,14 +10,12 @@ const initLog = {
 const Log = () => {
   const navigate = useNavigate();
   const [log, setLog] = useState(initLog);
+  const [user, setUser] = useState([]);
 
-  // useEffect =
-  //   (() => {
-  //     if (localStorage.getItem("jwtToken")) {
-  //       navigate("/chatpage");
-  //     }
-  //   },
-  //   []);
+  useEffect(() => {
+    if (localStorage.getItem("jwtToken")) {
+    }
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,6 +35,7 @@ const Log = () => {
       alert("pass");
       let data = await res.json();
       localStorage.setItem("jwtToken", data.token);
+      navigate("/chatpage");
     } else {
       alert("wrong username or password ");
     }
@@ -45,52 +44,63 @@ const Log = () => {
   };
 
   // ===============================================
+
   return (
-    <div className="container">
-      <Container className="login">
-        <Row>
-          <Col sm={6} className=" my-5">
-            <Form className="form" onSubmit={handleSubmit}>
-              <h4 className="log-text">LogIn</h4>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control
-                  className="form-input"
-                  type="email"
-                  placeholder="Enter email"
-                  value={log.email}
-                  onChange={(e) =>
-                    setLog((log) => ({ ...log, email: e.target.value }))
-                  }
-                />
-              </Form.Group>
+    <>
+      <div className="container">
+        <Container className="login">
+          <Row>
+            <Col md={6} className=" my-5">
+              <Form className="form" onSubmit={handleSubmit}>
+                <h4 className="log-text">LogIn</h4>
+                <Form.Group controlId="formBasicEmail">
+                  <Form.Label>Email address</Form.Label>
+                  <Form.Control
+                    className="form-input"
+                    type="email"
+                    placeholder="Enter email"
+                    value={log.email}
+                    onChange={(e) =>
+                      setLog((log) => ({ ...log, email: e.target.value }))
+                    }
+                  />
+                </Form.Group>
 
-              <Form.Group controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                  className="form-input"
-                  type="password"
-                  placeholder="Password"
-                  value={log.password}
-                  onChange={(e) =>
-                    setLog((log) => ({ ...log, password: e.target.value }))
-                  }
-                />
-              </Form.Group>
+                <Form.Group controlId="formBasicPassword">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control
+                    className="form-input"
+                    type="password"
+                    placeholder="Password"
+                    value={log.password}
+                    onChange={(e) =>
+                      setLog((log) => ({ ...log, password: e.target.value }))
+                    }
+                  />
+                </Form.Group>
 
-              <Button className="login_button" variant="primary" type="submit">
-                Log In
-              </Button>
-              <Link to="/signup">
-                <Button className="button-sign" variant="warning" type="submit">
-                  Do'not have an account? Sign up
+                <Button
+                  className="login_button"
+                  variant="primary"
+                  type="submit"
+                >
+                  Log In
                 </Button>
-              </Link>
-            </Form>
-          </Col>
-        </Row>
-      </Container>
-    </div>
+                <Link to="/signup">
+                  <Button
+                    className="button-sign"
+                    variant="warning"
+                    type="submit"
+                  >
+                    Do'not have an account? Sign up
+                  </Button>
+                </Link>
+              </Form>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    </>
   );
 };
 export default Log;

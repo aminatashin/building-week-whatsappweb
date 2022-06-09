@@ -1,6 +1,6 @@
 import { verifyToken } from "../user/tools.js";
 
-export const tookenAuth = async (req, re, next) => {
+export const tokenAuth = async (req, re, next) => {
   if (!req.headers.authorization) {
     console.log(Error);
   } else {
