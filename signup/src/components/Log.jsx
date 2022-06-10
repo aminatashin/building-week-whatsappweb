@@ -10,7 +10,6 @@ const initLog = {
 const Log = () => {
   const navigate = useNavigate();
   const [log, setLog] = useState(initLog);
-  const [user, setUser] = useState([]);
 
   useEffect(() => {
     if (localStorage.getItem("jwtToken")) {
@@ -32,9 +31,10 @@ const Log = () => {
       },
     });
     if (res.ok) {
-      alert("pass");
       let data = await res.json();
+
       localStorage.setItem("jwtToken", data.token);
+      alert(`WellCome :D`);
       navigate("/chatpage");
     } else {
       alert("wrong username or password ");

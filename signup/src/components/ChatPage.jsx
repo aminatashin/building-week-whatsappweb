@@ -5,13 +5,12 @@ import { TbCircleDashed } from "react-icons/tb";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { BsFillChatLeftTextFill } from "react-icons/bs";
 import { HiOutlineSearch } from "react-icons/hi";
-import { FaRegSmileWink } from "react-icons/fa";
-import { GrAttachment } from "react-icons/gr";
-import { FaMicrophone } from "react-icons/fa";
+
 import { useNavigate } from "react-router-dom";
 import ContactUsers from "./Contacts";
 import WellCome from "./WellCome";
 import ChatContainer from "./ChatContainer";
+import MessageInput from "./MessageInput";
 
 const ChatPage = () => {
   const navigate = useNavigate();
@@ -61,7 +60,7 @@ const ChatPage = () => {
           <div className="userimg">
             <img src={ALEX} className="cover" alt="img" />
           </div>
-          <div>{currentContact.username}</div>
+          <h5>{currentContact.username}</h5>
           <ul className="nav_icon">
             <li>
               <TbCircleDashed />
@@ -169,16 +168,11 @@ const ChatPage = () => {
         {setIsLoaded && currentChat === undefined ? (
           <WellCome currentContact={currentContact} />
         ) : (
-          <ChatContainer currentContact={currentContact} />
+          <ChatContainer currentChat={currentChat} />
         )}
 
         {/* chat input */}
-        <div className="chatbox_input ">
-          <FaRegSmileWink className="icon" />
-          <GrAttachment className="icon" />
-          <input type="text" placeholder="Type a message" />
-          <FaMicrophone className="icon" />
-        </div>
+        <MessageInput />
       </div>
     </div>
   );

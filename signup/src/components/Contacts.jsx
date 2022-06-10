@@ -3,16 +3,13 @@ import "./chatpage.css";
 import ALEX from "../../src/components/alex.png";
 
 const ContactUsers = ({ currentContact, chatChange }) => {
-  const [currentUserName, setCurrentUserName] = useState(null);
+  // const [currentUserName, setCurrentUserName] = useState(null);
   const [select, setSelect] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
   //   =====================================================
   useEffect(() => {
-    if (currentContact) {
-      setCurrentUserName(currentContact.username);
-    }
     fetchGet();
-  }, [currentContact]);
+  }, []);
   // =================================================
   const fetchGet = async () => {
     const res = await fetch("http://localhost:3004/user/signup", {
@@ -36,13 +33,16 @@ const ContactUsers = ({ currentContact, chatChange }) => {
 
   return (
     <div className="chatlist">
-      <div className="block">
+      <div
+        className={`block ${currentContact === select ? "selected" : ""}`}
+        onClick={() => changeCurrentChat(!select)}
+      >
         <div className="imgbx">
           <img src={ALEX} className="cover" alt="img" />
         </div>
         <div className="details">
           <div className="listHead">
-            <h4>{currentUserName}</h4>
+            <h4>{currentContact.username}</h4>
             {/* <p className="time">10:10</p> */}
           </div>
           <div className="message_p">
@@ -53,14 +53,14 @@ const ContactUsers = ({ currentContact, chatChange }) => {
       </div>
       <div className="block">
         {allUsers.map((contact, index) => (
-          <div className="each-block">
+          <div
+            className={`each-block ${index === select ? "selected" : ""}`}
+            onClick={() => changeCurrentChat(index, contact)}
+          >
             <div className="imgbx2">
               <img src={ALEX} className="cover" alt="img" />
             </div>
-            <div
-              className={`details2 ${index === select ? "selected" : ""}`}
-              onClick={() => changeCurrentChat(index, contact)}
-            >
+            <div className={`details2 `}>
               <div className="listHead2">
                 <h4>{contact.username}</h4>
               </div>

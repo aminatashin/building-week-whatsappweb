@@ -3,8 +3,9 @@ import "./chatpage.css";
 import { HiOutlineSearch } from "react-icons/hi";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import ALEX from "../../src/components/alex.png";
+import LogOut from "./LogOut";
 
-const ChatContainer = ({ currentContact }) => {
+const ChatContainer = ({ currentChat }) => {
   return (
     <div>
       <div className="header">
@@ -13,7 +14,7 @@ const ChatContainer = ({ currentContact }) => {
             <img src={ALEX} className="cover" alt="img" />
           </div>
           <h4>
-            {currentContact.username} <br />
+            {currentChat.username} <br />
             <span>online</span>
           </h4>
         </div>
@@ -24,8 +25,12 @@ const ChatContainer = ({ currentContact }) => {
           <li>
             <BsThreeDotsVertical />
           </li>
+          <li>
+            <LogOut />
+          </li>
         </ul>
       </div>
+
       <div className="chatBox">
         <div className="message my_message">
           <p>
