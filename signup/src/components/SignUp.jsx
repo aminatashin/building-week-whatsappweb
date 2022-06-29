@@ -18,10 +18,6 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchPost();
-
-    // axios
-    //   .post("http//:localhost:3004/user/login", registered)
-    //   .then((response) => console.log(response.data));
   };
 
   //   ===================POST==================================
